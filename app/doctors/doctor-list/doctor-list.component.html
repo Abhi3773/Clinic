@@ -1,0 +1,43 @@
+<nav class="navbar">
+    <input class="form-control" type="text" #myinput  
+     [(ngModel)]="patientNam" (input)="Search()"
+    placeholder="Enter Doctor Name number to search"/>
+</nav>
+<table class="table table-success">
+    <thead>
+        <tr>
+            <th>doctorId</th>
+            <th>doctorFees</th>
+            <th>Doctor Name</th>
+            <th>Doctor Mobile</th>
+            <!-- <th>Address</th>
+            <th>Email</th>
+            <th>BloodGroup</th>
+            <th>Age</th> -->
+        </tr> 
+    </thead>
+    <tbody>
+        <tr *ngFor="let doctor of doctors">
+            <td>{{doctor.doctorId}}</td>
+            <td>{{doctor.doctorFees}}</td>
+            <td>{{doctor.user.userName}}</td>
+            <td>{{doctor.user.mobileNo}}</td>
+            
+            <!-- <td (click)="populateForm(patient)">{{patient.patientName}}</td>
+            <td (click)="populateForm(patient)">{{patient.phone}}</td>
+            <td (click)="populateForm(patient)">{{patient.address}}</td>
+            <td (click)="populateForm(patient)">{{patient.email}}</td>
+            <td (click)="populateForm(patient)">{{patient.bloodGroup}}</td>
+            <td (click)="populateForm(patient)">{{patient.age}}</td> -->
+
+            <!-- <td>
+            <a href="../patient"> <button  class="btn btn-info"
+                (click)="updatePatient(patient)" >Edit</button></a>
+           </td> -->
+            <!-- <td><button class="btn btn-primary"
+            
+            >X</button>
+        </td> -->
+        </tr>
+    </tbody>
+</table>

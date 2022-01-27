@@ -1,0 +1,93 @@
+
+<form name="billForm" #form="ngForm" autocomplete="off"
+(ngSubmit)="onSubmit(form)">
+
+
+
+    <!--billId-->
+    <input type="text" name="billId" [(ngModel)]="billService.formData.billId">
+   
+    <!--prescriptionId-->
+    <div class="form-group">
+        <label>prescriptionId</label>
+        <select class="form-control" id="prescriptionId" placeholder="Enter prescriptionId"
+        required [(ngModel)]="billService.formData.prescriptionId" name="prescriptionId"
+        #prescriptionId="ngModel">
+        <option *ngFor="let dl of listItems" [value]="dl">
+            {{dl}}
+        </option>
+
+        </select>
+
+        <!-- <input type="text" class="form-control" id="prescriptionId" placeholder="Enter prescriptionId"
+        required
+        [(ngModel)]="billService.formData.prescriptionId" name="prescriptionId"
+        #prescriptionId="ngModel">
+        <div [hidden]="prescriptionId.valid || prescriptionId.pristine"
+           class="alert alert-danger">
+           <div [hidden]="!prescriptionId.hasError('required')">Name is required</div>
+        </div> -->
+
+     </div>
+
+    <!--testResultId-->
+    <div class="form-group">
+        <label for="testResultId">testResultId</label>
+        <select type="text" class="form-control" id="testResultId" placeholder="Enter testResultId" required
+        [(ngModel)]="billService.formData.testResultId" name="testResultId"
+        #testResultId="ngModel">
+        <option *ngFor="let dl1 of listTestItems" [value]="dl1">
+            {{dl1}}
+
+        </option>
+    
+    </select>
+        
+           
+        </div>
+     
+    
+    <!--billDate-->
+    <div class="form-group">
+        <label>billDate</label>
+        <input type="date" name="billDate" #billDate="ngModel" [(ngModel)]="billService.formData.billDate"
+            class="form-control" placeholder="Enter billDate"
+             required
+            [ngClass]="{ 'is-invalid': billDate.touched && billDate.invalid }"/>
+        <div class="validation-error"
+            *ngIf="billDate.touched && billDate.invalid">
+            <div *ngIf="billDate.errors.required">billDate is Required</div>
+        </div>
+    </div>
+    
+    <!--totalAmount-->
+    <div class="form-group">
+        <label for="totalAmount">totalAmount</label>
+        <input type="number" class="form-control" id="totalAmount" placeholder="Enter totalAmount"
+        required
+        [(ngModel)]="billService.formData.totalAmount" name="totalAmount"
+        
+        #totalAmount="ngModel">
+        <div [hidden]="totalAmount.valid || totalAmount.pristine"
+           class="alert alert-danger">
+           <div [hidden]="!totalAmount.hasError('required')">totalAmount is required</div>
+           
+        </div></div>
+    
+    
+    
+    <!--submit-->
+    <br>
+    <div class="form-group">
+        <button class="btn btn-lg btn-primary form-control"
+        type="submit" [disabled]="!(form.valid && form.dirty)">Submit</button>
+    </div>
+
+    <!--to go back-->
+    <br>
+    <div class="form-group">
+       <a href="../bill-list"><button class="btn btn-lg btn-primary form-control"
+        type="button" >Return  to Bill List</button></a> 
+    </div>
+
+</form>

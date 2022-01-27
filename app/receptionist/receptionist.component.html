@@ -1,0 +1,138 @@
+<!--Home Dashboard-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="../receptionist">Welcome: <br> {{userName}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="../receptionist">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+              Doctors
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="../doctor-list" routerLink="../doctor-list">View Doctors List</a>
+              
+            </div>
+          </li>
+        
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+              Patients
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="../patient">Add Patients</a>
+              <a class="dropdown-item" href="../patient-list">View Complete List</a>
+              
+            </div>
+          </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+            Appoinments
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="../appoinment">Add Appoinments</a>
+            <a class="dropdown-item" href="../appoinment-list">View all Appoinments</a>
+            
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+              Bill Generation
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="../bill">Add new Bill</a>
+              <a class="dropdown-item" href="../bill-list">View all Bill List</a>
+              
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" href="#">LogOut</a>
+          </li>
+
+      </ul>
+    </div>
+  </nav>
+
+
+<!-- <div class="container">
+
+    <header>
+        
+            <h5>Receptionist: {{userName}}</h5>
+        
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="../doctor-list">View Doctors</a>
+                </li>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="#" 
+                    (click)="logout()"
+                    >LogOut</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <div class="row">
+        <div class="col-sm">
+            <a href="../patient" role="button"
+            class="btn btn-outline-primary btn-lg btn-block text-center">
+            <span><i class="fa fa-user-plus fa-3x"></i></span>
+            <br>
+            Add Patient 
+        </a>
+        </div>
+
+        <div class="col-sm">
+            <a href="../patient-list" role="button"
+            class="btn btn-outline-primary btn-lg btn-block text-center">
+            <span><i class="fa fa-users fa-3x"></i></span>
+            <br>
+             Patients List
+        </a>
+        </div>
+
+        <div class="col-sm">
+            <a href="../patient-list" role="button"
+            class="btn btn-outline-primary btn-lg btn-block text-center">
+            <span><i class="fa fa-address-book fa-3x"></i></span>
+            <br>
+            Search Patient
+        </a>
+        </div>
+        <div class="col-sm">
+            <a href="../appoinment-list" role="button"
+            class="btn btn-outline-primary btn-lg btn-block text-center">
+            <span><i class="fa fa-calendar fa-3x"></i></span>
+            <br>
+            Appoinments 
+        </a>
+        </div>
+        <div class="col-sm">
+            <a href="../bill" role="button"
+            class="btn btn-outline-primary btn-lg btn-block text-center">
+            <span><i class="fa fa-inr fa-3x"></i></span>
+            <br>
+            Bill Generation
+        </a>
+        </div>
+        
+
+       
+    </div>
+</div> -->

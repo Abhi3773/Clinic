@@ -1,0 +1,41 @@
+<a href="../appoinment/">New Appoinmnet</a>
+<table class="table table-success">
+    <thead>
+        <tr>
+            <th (click)="sort('appoinmentId')">Appoinment Id&nbsp;<i class="fa fa-sort"></i></th>
+            <th>Patient Name</th>
+            <th>Patient Mobile</th>
+            <th>Patient Id</th>
+            <th>Doctor Name</th>
+            <th (click)="sort('date')">Appoinment Date&nbsp;<i class="fa fa-sort"></i></th>
+            <th>tokenNo</th>
+            <th>status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let appoinment of appoinmentService.appoinments  | orderBy:key:reverse">
+            <td>{{appoinment.appoinmentId}}</td>
+            <td>{{appoinment.patient.patientName}}</td>
+            <td>{{appoinment.patient.phone}}</td>
+            <td>{{appoinment.patient.patientId}}</td>
+            <!-- <td>{{appoinment.doctor.doctorFees}}</td> -->
+            <td>{{appoinment.doctor.user.userName}}</td>
+            <td>{{appoinment.date}}</td>
+            <td>{{appoinment.tokenNo}}</td>
+            <td>{{appoinment.status}}</td>
+
+            <td>
+                <a routerLink="/appoinment" > <button  class="fa fa-edit"
+                    (click)="updateAppoinment(appoinment)" ></button></a>
+    
+                    <!-- <a routerLink="/patient"><i class="fa fa-edit" style="font-size: 30px;color: blue;cursor: pointer;"></i></a> -->
+               <button class="fa fa-trash-o"
+                (click)="deleteAppoinment(appoinment.appoinmentId)"
+                ></button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+

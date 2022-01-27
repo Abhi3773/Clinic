@@ -1,0 +1,82 @@
+<!-- <input type="text" placeholder="Search.." name="search">
+    <a href="../patients"><button  type="button"><i class="fa fa-search"></i></button></a>
+  <br> -->
+
+<!-- <table class="table table-success">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>BloodGroup</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let patient of patientService.patients">
+            <td (click)="populateForm(patient)">{{patient.patientId}}</td>
+            <td (click)="populateForm(patient)">{{patient.patientName}}</td>
+            <td (click)="populateForm(patient)">{{patient.phone}}</td>
+            <td (click)="populateForm(patient)">{{patient.address}}</td>
+            <td (click)="populateForm(patient)">{{patient.email}}</td>
+            <td (click)="populateForm(patient)">{{patient.bloodGroup}}</td>
+            <td (click)="populateForm(patient)">{{patient.age}}</td>
+ 
+            <td>
+            <a routerLink="/patient" > <button  class="fa fa-edit"
+                (click)="updatePatient(patient)" ></button></a>
+
+           </td>
+            <td><button class="fa fa-trash-o"
+            (click)="deletePatient(patient.patientId)"
+            ></button>
+        </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div>
+    <select [(ngModel)]='patientSelected' (ngModelChange)='onpatientSelected($event)'>
+        <option *ngFor='let patient of fPatients' [value]='patient.patientId'>
+            {{patient.patientName}}
+
+        </option>
+    </select>
+</div>
+{{patientSelected}}
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>BloodGroup</th>
+        <th>Age</th>
+    </tr>
+
+    <tr *ngFor="let patient of listPatients">
+        <td (click)="populateForm(patient)">{{patient.patientId}}</td>
+        <td (click)="populateForm(patient)">{{patient.patientName}}</td>
+        <td (click)="populateForm(patient)">{{patient.phone}}</td>
+        <td (click)="populateForm(patient)">{{patient.address}}</td>
+        <td (click)="populateForm(patient)">{{patient.email}}</td>
+        <td (click)="populateForm(patient)">{{patient.bloodGroup}}</td>
+        <td (click)="populateForm(patient)">{{patient.age}}</td>
+
+        <td>
+        <a routerLink="/patient" > <button  class="fa fa-edit"
+            (click)="updatePatient(patient)" ></button></a>
+
+       </td>
+        <td><button class="fa fa-trash-o"
+        (click)="deletePatient(patient.patientId)"
+        ></button>
+    </td>
+    </tr>
+</table> -->

@@ -1,0 +1,147 @@
+
+<form name="appointmentForm" #form="ngForm" autocomplete="off"
+(ngSubmit)="onSubmit(form)">
+
+
+
+    <!--patientId-->
+    <div class="form-group">
+        <label>App:Id</label><br>
+    <input type="text" [disabled]="true" name="appoinmentId" [(ngModel)]="appoinmentService.formData.appoinmentId">
+    </div>
+    
+
+    <!--patientId-->
+    <!-- <div class="form-group">
+        <label>patientId</label>
+        <input name="patientId" #patientId="ngModel" [(ngModel)]="appoinmentService.formData.patientId"
+            class="form-control" placeholder="Enter patientId"
+             required
+            [ngClass]="{ 'is-invalid': patientId.touched && patientId.invalid }"/>
+        <div class="validation-error"
+            *ngIf="patientId.touched && patientId.invalid">
+            <div *ngIf="patientId.errors.required">patientId is Required</div>
+        </div>
+    </div> -->
+
+    <!--doctorId-->
+    <!-- <div class="form-group">
+        <label>doctorId</label>
+        <input name="doctorId" #doctorId="ngModel" [(ngModel)]="appoinmentService.formData.doctorId"
+            class="form-control" placeholder="Enter doctorId"
+             required
+            [ngClass]="{ 'is-invalid': doctorId.touched && doctorId.invalid }"/>
+        <div class="validation-error"
+            *ngIf="doctorId.touched && doctorId.invalid">
+            <div *ngIf="doctorId.errors.required">doctorId is Required</div>
+        </div>
+    </div> -->
+
+    <!--receptionistId-->
+    <!-- <div class="form-group">
+        <label>receptionistId</label>
+        <input name="receptionistId" #receptionistId="ngModel" [(ngModel)]="appoinmentService.formData.receptionistId"
+            class="form-control" placeholder="Enter receptionistId"
+             required
+            [ngClass]="{ 'is-invalid': receptionistId.touched && receptionistId.invalid }"/>
+        <div class="validation-error"
+            *ngIf="receptionistId.touched && receptionistId.invalid">
+            <div *ngIf="receptionistId.errors.required">receptionistId is Required</div>
+        </div>
+    </div> -->
+
+    
+
+
+     <!--patientId-->
+     <div class="form-group">
+        <label>patientId</label>
+        <select required  name="patientId" 
+            #patientId="ngModel" [(ngModel)]="appoinmentService.formData.patientId"
+            class="form-control" placeholder="Enter patientId"
+        >
+    <option *ngFor="let dl of listItems" [value]="dl">
+        {{dl}}
+    </option></select>
+        
+    </div>
+
+
+    <!--doctorId-->
+    <div class="form-group">
+        <label>doctorId</label>
+        <select name="doctorId" #doctorId="ngModel" [(ngModel)]="appoinmentService.formData.doctorId"
+            class="form-control" placeholder="Enter doctorId"
+             required>
+            <option *ngFor="let docl of listDocItems" [value]="docl">{{docl}}</option>
+        </select>
+    </div>
+
+    <!--receptionistId-->
+    <div class="form-group">
+        <label>receptionistId</label>
+        <select name="receptionistId" #receptionistId="ngModel" [(ngModel)]="appoinmentService.formData.receptionistId"
+            class="form-control" placeholder="Enter receptionistId"
+             required>
+            <option *ngFor="let recl of listRecepItems" [value]="recl">{{recl}}</option>
+            </select>
+    </div>
+    
+
+    <!--date-->
+    <div class="form-group">
+        <label>date</label>
+        <input name="date" type="date" #date="ngModel" [(ngModel)]="appoinmentService.formData.date"
+            class="form-control" placeholder="Enter date"
+             min="2022-01-22" 
+            [ngClass]="{ 'is-invalid': date.touched && date.invalid }"/>
+        <div class="validation-error"
+            *ngIf="date.touched && date.invalid">
+            <div *ngIf="date.errors.required">date is Required</div>
+        </div>
+    </div>
+
+    <!--tokenNo-->
+    <div class="form-group">
+        <label>tokenNo</label>
+        <input type="number" name="tokenNo" #tokenNo="ngModel" [(ngModel)]="appoinmentService.formData.tokenNo"
+            class="form-control" placeholder="Enter tokenNo"
+            minlength="1" required
+            [ngClass]="{ 'is-invalid': tokenNo.touched && tokenNo.invalid }"/>
+        <div class="validation-error"
+            *ngIf="tokenNo.touched && tokenNo.invalid">
+            <div *ngIf="tokenNo.errors.required">tokenNo is Required</div>
+        </div>
+    </div>
+
+    <!--status-->
+    <div class="form-group">
+        <label>Details</label>
+        <input name="status" #status="ngModel" [(ngModel)]="appoinmentService.formData.status"
+            class="form-control" placeholder="Enter Details"
+            minlength="1" required
+            [ngClass]="{ 'is-invalid': status.touched && status.invalid }"/>
+        <div class="validation-error"
+            *ngIf="status.touched && status.invalid">
+            <div *ngIf="status.errors.required">status is Required</div>
+        </div>
+    </div>
+    
+
+    
+    
+    <!--submit-->
+    <br>
+    <div class="form-group">
+        <button class="btn btn-lg btn-primary form-control"
+        type="submit" [disabled]="!(form.valid && form.dirty)">Submit</button>
+    </div>
+
+    <!--to go back-->
+    <br>
+    <div class="form-group">
+       <a href="../appoinment-list"><button class="btn btn-lg btn-primary form-control"
+        type="button" >Return  to Appoinment List</button></a> 
+    </div>
+
+</form>

@@ -1,0 +1,45 @@
+<a href="../patient/">Add New Patient</a>
+<nav class="navbar">
+    <input class="form-control" type="text" #myinput  
+     [(ngModel)]="patientNam" (input)="Search()"
+    placeholder="Enter Patient Mobile number to search"/>
+</nav>
+ 
+ <table class="table table-boardered">
+    <thead>
+        <tr>
+            <th (click)="sort('patientId')">ID&nbsp;<i class="fa fa-sort"></i></th>
+            <th (click)="sort('patientName')">Name&nbsp;<i class="fa fa-sort"></i></th> 
+            <th>Mobile</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>BloodGroup</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr> 
+    </thead>  
+    <tbody>
+        <tr *ngFor="let patient of patients | orderBy:key:reverse | paginate:{itemsPerPage:8,currentPage:p};">
+            <td (click)="populateForm(patient)">{{patient.patientId}}</td>
+            <td (click)="populateForm(patient)">{{patient.patientName}}</td>
+            <td (click)="populateForm(patient)">{{patient.phone}}</td>
+            <td (click)="populateForm(patient)">{{patient.address}}</td>
+            <td (click)="populateForm(patient)">{{patient.email}}</td>
+            <td (click)="populateForm(patient)">{{patient.bloodGroup}}</td>
+            <td (click)="populateForm(patient)">{{patient.age}}</td>
+ 
+            <td>
+            <a routerLink="/patient" > <button  class="fa fa-edit"
+                (click)="updatePatient(patient)" ></button></a>
+
+                <!-- <a routerLink="/patient"><i class="fa fa-edit" style="font-size: 30px;color: blue;cursor: pointer;"></i></a> -->
+           <button class="fa fa-trash-o"
+            (click)="deletePatient(patient.patientId)"
+            ></button>
+        </td>
+        </tr>
+    </tbody>
+    <br>
+    <pagination-controls  (pageChange)="p = $event"></pagination-controls>
+
+</table>
